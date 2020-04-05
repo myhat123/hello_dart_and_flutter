@@ -2,7 +2,7 @@
 
 去除 AppBar
 增加 BottomAppBar
-
+```dart
 bottomNavigationBar: BottomAppBar(
     child: Container(
         padding: EdgeInsets.all(6.0),
@@ -43,3 +43,4 @@ bottomNavigationBar: BottomAppBar(
         )
     ),
 ),
+```

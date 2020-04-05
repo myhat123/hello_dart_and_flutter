@@ -4,6 +4,7 @@
 
 http://news-at.zhihu.com/api/4/news/latest
 
+```json
 {
     "date": "20200125",
     "stories": [
@@ -35,3 +36,4 @@ http://news-at.zhihu.com/api/4/news/latest
     ...
     ]
 }
+```

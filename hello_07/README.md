@@ -10,5 +10,5 @@ GHFlutterState, GHFlutter 放入 ghflutter.dart
 
 更新主题 theme
 
-MaterialApp 增加参数 theme
+MaterialApp 增加参数 theme  
 theme: ThemeData(primaryColor: Colors.green.shade800), 

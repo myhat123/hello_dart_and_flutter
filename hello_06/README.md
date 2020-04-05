@@ -2,6 +2,7 @@
 
 增加自定义的Member类
 
+```dart
 class Member {
   final String login;
 
@@ -14,9 +15,10 @@ class Member {
 }
 
 var _members = [];
+```
 
 改为
-
+```dart
 var _members = <Member>[];
 
 在传递变量时的处理
@@ -29,13 +31,15 @@ setState(() {
     _members.add(member);
   }
 });
+```
 
 _buildRow() 使用Member对象的login属性
 
-title: Text("${_members[i].login}", style: _biggerFont)
+> title: Text("${_members[i].login}", style: _biggerFont)
 
 继续增加Member的属性 avatarURL 头像
 
+```dart
 class Member {
   final String login;
   final String avatarUrl;
@@ -51,9 +55,11 @@ class Member {
     }
   }
 }
+```
 
 _buildRow 怎样显示头像图片呢？ ListTile 增加leading参数 -> CircleAvatar -> NetworkImage
 
+```dart
 Widget _buildRow(int i) {
   return Padding(
     padding: const EdgeInsets.all(16.0),
@@ -70,3 +76,4 @@ Widget _buildRow(int i) {
 _loadData()
 
 final member = Member(memberJSON["login"], memberJSON["avatar_url"]);
+```

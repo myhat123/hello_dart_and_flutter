@@ -4,6 +4,7 @@
 
 storypage.dart
 
+```
 _buildContent(int i) -> ListTile -> title 
 maxLines: 2 最多两行，
 overflow: TextOverflow.ellipsis 超过部分用省略号...
@@ -13,11 +14,13 @@ overflow: TextOverflow.ellipsis 超过部分用省略号...
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
     ),
+```
 
 newspage.dart
 
 增加评论图标的事件处理 -> CommentPage
 
+```dart
 IconButton(
     icon: Icon(Icons.mail_outline), 
     onPressed: () {
@@ -29,6 +32,7 @@ IconButton(
         );
     },
 ),
+```
 
 增加commentpage.dart, comment.dart
 

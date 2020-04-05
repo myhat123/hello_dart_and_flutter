@@ -4,31 +4,37 @@ pubspec.yaml
 ============
 dependencies部分描述依赖的库
 
+```yaml
     # HTTP package
     http: ^0.12.0+4
+```
 
-手动
-flutter packages get
+手动  
+> flutter packages get
 
-自动
+自动  
 vs code里会自动运行 flutter packages get
 
 StatelessWidget -> StatefulWidget -> State<GHFlutter>
+
 GHFlutterApp -> GHFlutter -> GHFlutterState
 
 Stateful 通过 State 对象来维护动态信息
 
 GHFlutterState -> build() -> body -> ListView.builder -> padding, itemcount, itemBuilder
 
+```dart
     body: ListView.builder(
         padding: const EdgeInsets.all(16.0),
         itemCount: _members.length,
         itemBuilder: (BuildContext context, int position) {
           return _buildRow(position);
         }),
+```
 
 增加分割线
 
+```dart
     body: ListView.builder(
         itemCount: _members.length * 2,
         itemBuilder: (BuildContext context, int position) {
@@ -38,19 +44,23 @@ GHFlutterState -> build() -> body -> ListView.builder -> padding, itemcount, ite
           
           return _buildRow(index);
         }),
+```
 
     position isOdd方法 ~/ 运算符
 
 调整_buildRow
  
 原先：
+```dart
     Widget _buildRow(int i) {
         return ListTile(
         title: Text("${_members[i]["login"]}", style: _biggerFont)
         );
     }
+```
 
 调整为：
+```dart
     Widget _buildRow(int i) {
         return Padding(
             padding: const EdgeInsets.all(16.0),
@@ -59,3 +69,4 @@ GHFlutterState -> build() -> body -> ListView.builder -> padding, itemcount, ite
             )
         );
     }
+```

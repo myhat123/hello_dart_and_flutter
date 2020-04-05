@@ -2,17 +2,18 @@
 
 参考资料:
 
-https://www.jianshu.com/p/46bb225c2875
+https://www.jianshu.com/p/46bb225c2875  
 https://kodestat.gitbook.io/flutter/43-flutter-listviewbuilder-with-refresh-indicator
 
 把_setStory() 拆分成 _initStory(), _addStory()
 
-_loadData() -> _initStory(jsonData)
+_loadData() -> _initStory(jsonData)  
 _retrieveData() -> _addStory(jsonData)
 
 _loadData()之前已分离成独立函数
 只需在 _onRefresh() 进行调用即可
 
+```dart
 Future<Null> _onRefresh() {
     Completer<Null> completer = new Completer<Null>();
     Timer(new Duration(seconds: 1), () {
@@ -21,9 +22,11 @@ Future<Null> _onRefresh() {
     });
     return completer.future;
 }
+```
 
 然后修改 _StoryPageState -> build -> body -> RefreshIndicator
 
+```dart
   @override
   Widget build(BuildContext context) => Scaffold (
       appBar: AppBar(
@@ -52,20 +55,24 @@ Future<Null> _onRefresh() {
         onRefresh: _onRefresh,
       ),
     );
+```
 
-physics: const AlwaysScrollableScrollPhysics(),
+physics: const AlwaysScrollableScrollPhysics(), 
 内容不足一屏时，list可能会滑不动，加上就一直都可以滑动
 
 打包apk，需要对app设置权限
 
-参考资料: https://www.cnblogs.com/joe235/p/11492273.html
+参考资料:  
+https://www.cnblogs.com/joe235/p/11492273.html
 
 android/app/src/profile/AndroidManifest.xml manifest中
 
+```xml
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+```
 
 android/src/main/AndroidManifest.xml
 
@@ -73,12 +80,14 @@ android/src/main/AndroidManifest.xml
 
 发布Android版APP https://flutterchina.club/android-release/
 
-keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
+> keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 
 hello_21/android/key.properties 文件
 
 文件内容:
+```ini
   storePassword=123456
   keyPassword=123456
   keyAlias=key
   storeFile=/home/hzg/key.jks
+```

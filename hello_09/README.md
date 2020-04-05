@@ -1,6 +1,6 @@
 # hello_09
 
-增加一个页面(屏幕)
+增加一个页面(屏幕)  
 memberwidget.dart
 
 路由、导航
@@ -11,24 +11,29 @@ PageRoute -> MaterialPageRoute
 
 ghflutterwidget.dart 增加引入
 
+```dart
 import 'memberwidget.dart';
+```
 
 GHFlutterState -> _pushMember() -> Navigator -> MaterialPageRoute -> MemberWidget
 
 点击member之后，通过调用_pushMember()，进入MemberWidget
 在 _buildRow() 给 ListTile 增加 onTap 属性
 
-memberwidget.dart
+memberwidget.dart  
 MemberState -> Column -> IconButton
 
+```dart
 body: Padding(
     padding: EdgeInsets.all(16.0),
     child: Image.network(member.avatarUrl)
 )
+```
 
-修改为
+修改为  
 navigation就像widget的栈, pop()
 
+```dart
 body: Padding(
     padding: EdgeInsets.all(16.0),
     // Make child a Column here and add the IconButton
@@ -41,3 +46,4 @@ body: Padding(
                     Navigator.pop(context);
                 })
         ])));
+```

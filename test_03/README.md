@@ -1,12 +1,13 @@
 增加encrypt加解密库
 =================
 
+```yaml
 dependencies:
   encrypt: ^4.0.0
+```
 
-参考资料
-https://github.com/leocavalcante/encrypt/blob/master/example/fernet.dart
-
+参考资料  
+https://github.com/leocavalcante/encrypt/blob/master/example/fernet.dart  
 https://github.com/leocavalcante/encrypt/blob/master/lib/src/encrypted.dart
 
 了解 Encrypted 类

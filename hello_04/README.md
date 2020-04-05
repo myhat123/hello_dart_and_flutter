@@ -2,10 +2,11 @@
 
 https://www.raywenderlich.com/4529993-getting-started-with-flutter
 
-hello_04 例子是从github.com中获取数据
+hello_04 例子是从github.com中获取数据  
 https://api.github.com/orgs/raywenderlich/members
 
 json格式如下:
+```json
 [
   {
     "login": "0xTim",
@@ -29,16 +30,19 @@ json格式如下:
   },
   ...
 ]
+```
 
-创建flutter项目
-flutter create hello_04
+创建flutter项目  
+> flutter create hello_04
 
 删除已生成的默认代码、test下的widget_test.dart文件
 
-flutter packages get
+> flutter packages get
 
 一行函数 =>
+```dart
 void main() => runApp(GHFlutterApp());
+```
 
 runApp -> GHFlutterApp -> StatelessWidget
 
@@ -46,5 +50,5 @@ Widget -> MaterialApp -> Scaffold, AppBar, Text, Center
 
 Hot Reload
 ==========
-To hot reload changes while running, press "r".
+To hot reload changes while running, press "r".  
 修改代码后，按r键，即可看到变化结果
