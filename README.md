@@ -5,20 +5,44 @@ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 ```
 
-```bash
-export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
-export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
-```
-
 安装 Flutter  
 https://flutter.dev/docs/get-started/install  
-https://flutter.dev/docs/get-started/install/linux
+https://flutter.dev/docs/get-started/install/linux  
+https://flutterchina.club/setup-linux/
 
-安装 Android Studio
+安装 Android Studio 3.6.3
 https://developer.android.google.cn/studio  
-下载android sdk, 模拟器
+下载android sdk, 模拟器, 安装dart, flutter插件
 
-flutter内含dart
+安装gradle 6.4  
+
+```sh
+export GRADLE_HOME=~/gradle-6.4
+export PATH=$PATH:$GRADLE_HOME/bin
+```
+
+flutter doctor
+
+```sh
+hzg@gofast:~$ flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, v1.17.1, on Linux, locale zh_CN.UTF-8)
+ 
+[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.3)
+[✓] Android Studio (version 3.6)
+[✓] VS Code (version 1.45.0)
+[✓] Connected device (1 available)
+
+• No issues found!
+```
+
+flutter内含dart  
+/home/hzg/flutter/bin/cache/dart-sdk
+
+```sh
+hzg@gofast:~$ dart --version
+Dart VM version: 2.8.2 (stable) (Mon May 11 15:06:42 2020 +0200) on "linux_x64"
+```
 
 体验flutter第一个app  
 通过vscode 插件: flutter, dart两个插件
@@ -71,9 +95,6 @@ hello_25  结合hello_24，重新调整上滑加载机制
 =======
 Flutter原理与实践  
 https://tech.meituan.com/2018/08/09/waimai-flutter-practice.html
-
-一个 Demo 入门 Flutter  
-https://limboy.me/tech/2018/12/07/flutter-demo.html
 
 其他练习
 =======
